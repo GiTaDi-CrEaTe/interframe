@@ -1,0 +1,52 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0.0",
+  "FriendlyName": "Interframe Continuity QA",
+  "Description": "Engine-aware hybrid continuity and scene-integrity diagnostics for Unreal Engine Level Sequences.",
+  "Category": "Cinematics",
+  "CreatedBy": "Interframe Research & Engineering (Yarvix Studio Exploration)",
+  "CreatedByURL": "https://github.com/interframe-qa/interframe",
+  "DocsURL": "https://github.com/interframe-qa/interframe/tree/main/docs",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "EngineVersion": "5.8.0",
+  "CanContainContent": false,
+  "IsBetaVersion": true,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "InterframePlugin",
+      "Type": "Editor",
+      "LoadingPhase": "PostEngineInit",
+      "PlatformAllowList": [
+        "Win64",
+        "Linux",
+        "Mac"
+      ]
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "LevelSequenceEditor",
+      "Enabled": true
+    },
+    {
+      "Name": "SequencerScripting",
+      "Enabled": true
+    },
+    {
+      "Name": "MovieRenderPipeline",
+      "Enabled": true
+    },
+    {
+      "Name": "DataValidation",
+      "Enabled": true
+    },
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    }
+  ]
+}

@@ -1,0 +1,1782 @@
+{
+  "benchmark_summary": {
+    "benchmark_name": "LEAVE_ALIVE_Controlled_Continuity_Benchmark_v1",
+    "total_sequences": 25,
+    "total_shots": 125,
+    "total_shot_boundaries": 100,
+    "total_seeded_faults": 105,
+    "fault_counts_by_rule": {
+      "IF-001": 15,
+      "IF-002": 15,
+      "IF-003": 15,
+      "IF-004": 15,
+      "IF-005": 15,
+      "IF-006": 15,
+      "IF-007": 10,
+      "IF-008": 5
+    }
+  },
+  "baselines": {
+    "B1_RULES_ONLY": {
+      "tp": 75,
+      "fp": 0,
+      "fn": 30,
+      "precision": 1.0,
+      "recall": 0.7143,
+      "f1": 0.8333,
+      "fp_per_100_shot_boundaries": 0.0,
+      "per_rule": {
+        "IF-001": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-002": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-003": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-004": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-005": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 15,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-006": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 15,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-007": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-008": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "miss_rate_by_severity": {
+        "Critical": {
+          "total_faults": 30,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        },
+        "Major": {
+          "total_faults": 55,
+          "missed_faults": 15,
+          "miss_rate": 0.2727
+        },
+        "Minor": {
+          "total_faults": 15,
+          "missed_faults": 15,
+          "miss_rate": 1.0
+        },
+        "Informational": {
+          "total_faults": 5,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        }
+      },
+      "bootstrap_95ci_clustered_by_sequence": {
+        "precision_95ci": [
+          1.0,
+          1.0
+        ],
+        "recall_95ci": [
+          0.697,
+          0.7317
+        ],
+        "f1_95ci": [
+          0.8214,
+          0.8451
+        ]
+      },
+      "runtime": {
+        "total_seconds": 3.5104,
+        "seconds_per_sequence": 0.1404,
+        "peak_ram_mb": 0.244
+      }
+    },
+    "B2_IMAGE_ONLY": {
+      "tp": 30,
+      "fp": 100,
+      "fn": 75,
+      "precision": 0.2308,
+      "recall": 0.2857,
+      "f1": 0.2553,
+      "fp_per_100_shot_boundaries": 100.0,
+      "per_rule": {
+        "IF-001": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 15,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-002": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 15,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-003": {
+          "tp": 15,
+          "fp": 85,
+          "fn": 0,
+          "precision": 0.15,
+          "recall": 1.0,
+          "f1": 0.2609
+        },
+        "IF-004": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 15,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-005": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 15,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-006": {
+          "tp": 15,
+          "fp": 15,
+          "fn": 0,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6667
+        },
+        "IF-007": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 10,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "IF-008": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "miss_rate_by_severity": {
+        "Critical": {
+          "total_faults": 30,
+          "missed_faults": 30,
+          "miss_rate": 1.0
+        },
+        "Major": {
+          "total_faults": 55,
+          "missed_faults": 40,
+          "miss_rate": 0.7273
+        },
+        "Minor": {
+          "total_faults": 15,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        },
+        "Informational": {
+          "total_faults": 5,
+          "missed_faults": 5,
+          "miss_rate": 1.0
+        }
+      },
+      "bootstrap_95ci_clustered_by_sequence": {
+        "precision_95ci": [
+          0.1803,
+          0.2857
+        ],
+        "recall_95ci": [
+          0.2683,
+          0.303
+        ],
+        "f1_95ci": [
+          0.2136,
+          0.2888
+        ]
+      },
+      "runtime": {
+        "total_seconds": 6.5028,
+        "seconds_per_sequence": 0.2601,
+        "peak_ram_mb": 1.977
+      }
+    },
+    "B3_HYBRID": {
+      "tp": 105,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fp_per_100_shot_boundaries": 0.0,
+      "per_rule": {
+        "IF-001": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-002": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-003": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-004": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-005": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-006": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-007": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "IF-008": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "miss_rate_by_severity": {
+        "Critical": {
+          "total_faults": 30,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        },
+        "Major": {
+          "total_faults": 55,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        },
+        "Minor": {
+          "total_faults": 15,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        },
+        "Informational": {
+          "total_faults": 5,
+          "missed_faults": 0,
+          "miss_rate": 0.0
+        }
+      },
+      "bootstrap_95ci_clustered_by_sequence": {
+        "precision_95ci": [
+          1.0,
+          1.0
+        ],
+        "recall_95ci": [
+          1.0,
+          1.0
+        ],
+        "f1_95ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "runtime": {
+        "total_seconds": 6.3161,
+        "seconds_per_sequence": 0.2526,
+        "peak_ram_mb": 2.057
+      }
+    }
+  },
+  "hypothesis_gates": {
+    "H1_engine_metadata_reduces_fp_vs_image_only": {
+      "b2_image_only_precision": 0.2308,
+      "b2_fp_per_100_boundaries": 100.0,
+      "b3_hybrid_precision": 1.0,
+      "b3_fp_per_100_boundaries": 0.0,
+      "b1_rules_only_recall": 0.7143,
+      "b3_hybrid_recall": 1.0,
+      "passed": true
+    },
+    "H2_mvp_saves_review_time": {
+      "design": "2x2 Crossover Study (25 sequences, Group A manual->tool, Group B tool->manual)",
+      "median_manual_minutes_per_sequence": 15.0,
+      "median_interframe_minutes_per_sequence": 6.3,
+      "median_time_saved_pct": 58.0,
+      "target_threshold_pct": 25.0,
+      "h2_pass": true
+    }
+  },
+  "inter_rater_agreement": {
+    "double_labelled_items": 40,
+    "observed_agreement": 0.95,
+    "expected_agreement": 0.3325,
+    "cohens_kappa": 0.9251,
+    "disagreements_adjudicated": 2
+  },
+  "sample_issues_preview": [
+    {
+      "issue_id": "ISS-IF001-2D85D362166C",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_001",
+      "frame_time": {
+        "frame": 0,
+        "seconds": 0.0
+      },
+      "actor_guid": "guid-lantern-01",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/InvalidMount/Missing/SM_BrokenLantern",
+      "rule_id": "IF-001",
+      "issue_type": "Invalid/missing asset reference",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.99,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Asset Registry returned missing/unresolvable reference for '/InvalidMount/Missing/SM_BrokenLantern' bound to actor 'BP_CaveLantern'.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' in SH_001 references missing or unresolvable asset '/InvalidMount/Missing/SM_BrokenLantern'.",
+      "expected_state": {
+        "asset_exists_in_registry": true,
+        "valid_package_prefix": "/Game/"
+      },
+      "actual_state": {
+        "asset_exists_in_registry": false,
+        "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh01_f0000_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh01_f0000_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF002-DAAB69012ADC",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_002",
+      "frame_time": {
+        "frame": 48,
+        "seconds": 2.0
+      },
+      "actor_guid": "guid-hero-01",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-002",
+      "issue_type": "Expected actor unbound in shot",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.98,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Expected actor 'BP_Protagonist_Kael' (guid-hero-01) required by rule 'rule_LS_LeaveAlive_Scn01_hero_bound' is unbound in SH_002.",
+      "one_sentence_explanation": "Required actor 'BP_Protagonist_Kael' is missing or unbound in Level Sequence shot SH_002.",
+      "expected_state": {
+        "bound_in_sequencer": true,
+        "actor_guid": "guid-hero-01"
+      },
+      "actual_state": {
+        "bound_in_sequencer": false
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh02_f0048_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh02_f0048_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF007-BE976317F024",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_005",
+      "frame_time": {
+        "frame": 192,
+        "seconds": 8.0
+      },
+      "actor_guid": "guid-relic-01",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-007",
+      "issue_type": "Unexpected asset substitution",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.95,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Actor 'BP_SignalRelic_Prop' in SH_005 uses substituted mesh/material/asset compared to declared invariant 'rule_LS_LeaveAlive_Scn01_relic_asset_inv'.",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_005 substituted 'SM_SignalRelic_ProxyLow' / '['MI_SignalRelic_Greybox']' instead of declared asset invariant.",
+      "expected_state": {
+        "mesh_id": "SM_SignalRelic_Hero",
+        "material_ids": [
+          "MI_SignalRelic_Gold"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "actual_state": {
+        "mesh_id": "SM_SignalRelic_ProxyLow",
+        "material_ids": [
+          "MI_SignalRelic_Greybox"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh05_f0192_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh05_f0192_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF003-305B4EEBA65B",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_003",
+      "frame_time": {
+        "frame": 96,
+        "seconds": 4.0
+      },
+      "actor_guid": "guid-lantern-01",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+      "rule_id": "IF-003",
+      "issue_type": "Unexpected state change",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.86,
+      "confidence_band": "Medium",
+      "status": "failed",
+      "observation": "Unexpected state change between SH_002 and SH_003 for 'BP_CaveLantern': visibility toggled True -> False.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' had an undeclared state change across cut SH_002 -> SH_003 (visibility toggled True -> False).",
+      "expected_state": {
+        "visibility_state": true,
+        "mesh_id": "SM_CaveLantern",
+        "material_ids": [
+          "MI_Lantern_Glass"
+        ]
+      },
+      "actual_state": {
+        "visibility_state": false,
+        "mesh_id": "SM_CaveLantern",
+        "material_ids": [
+          "MI_Lantern_Glass"
+        ]
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF004-48D181634C0F",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_004",
+      "frame_time": {
+        "frame": 144,
+        "seconds": 6.0
+      },
+      "actor_guid": "guid-hero-01",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-004",
+      "issue_type": "Transform discontinuity",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.81,
+      "confidence_band": "Medium",
+      "status": "needs_review",
+      "observation": "Transform jump across continuous cut SH_003 -> SH_004: delta_pos=125.0cm (max 45.0cm), delta_rot=0.0deg (max 30.0deg).",
+      "one_sentence_explanation": "Actor 'BP_Protagonist_Kael' jumped 125.0 cm / 0.0 deg at continuous shot boundary SH_003 -> SH_004.",
+      "expected_state": {
+        "location_cm": [
+          100.0,
+          20.0,
+          0.0
+        ],
+        "rotation_deg": [
+          0.0,
+          15.0,
+          0.0
+        ],
+        "max_position_jump_cm": 45.0,
+        "max_rotation_jump_deg": 30.0
+      },
+      "actual_state": {
+        "location_cm": [
+          225.0,
+          20.0,
+          0.0
+        ],
+        "rotation_deg": [
+          0.0,
+          15.0,
+          0.0
+        ],
+        "measured_position_jump_cm": 125.0,
+        "measured_rotation_jump_deg": 0.0
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF005-D7544BD43833",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_003",
+      "frame_time": {
+        "frame": 96,
+        "seconds": 4.0
+      },
+      "actor_guid": "guid-relic-01",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-005",
+      "issue_type": "Expected prop not visible",
+      "rule_version": "1.0.0",
+      "model_version": "interframe-cv-comparator-1.0.0-opencv4",
+      "severity": "Major",
+      "confidence": 0.89,
+      "confidence_band": "Medium",
+      "status": "needs_review",
+      "observation": "Actor exists in Sequencer with visibility=True, but Object-ID stencil 2 has only 0 visible pixels (0.0000% < 0.15% threshold) due to full camera occlusion or frustum clipping.",
+      "one_sentence_explanation": "Expected prop/actor 'BP_SignalRelic_Prop' is active in Sequencer for SH_003 but is fully occluded or absent in the rendered camera view.",
+      "expected_state": {
+        "visibility_state": true,
+        "min_mask_coverage_ratio": 0.0015
+      },
+      "actual_state": {
+        "visibility_state": true,
+        "rendered_mask_pixels": 0,
+        "rendered_mask_coverage_ratio": 0.0
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "hybrid_metadata_plus_cv",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_ref_rgb.png",
+        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_obj_mask.png",
+        "visual_metrics": {
+          "stencil_object_id": 2,
+          "actor_pixels": 0,
+          "total_pixels": 14400,
+          "coverage_ratio": 0.0
+        }
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF006-088B887A2656",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn01",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+      "shot_id": "SH_004",
+      "frame_time": {
+        "frame": 144,
+        "seconds": 6.0
+      },
+      "actor_guid": "guid-relic-01",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-006",
+      "issue_type": "Appearance regression in same shot",
+      "rule_version": "1.0.0",
+      "model_version": "interframe-cv-comparator-1.0.0-opencv4",
+      "severity": "Minor",
+      "confidence": 0.96,
+      "confidence_band": "Candidate / Needs Review",
+      "status": "needs_review",
+      "observation": "Controlled render appearance regression detected within actor region (SSIM=0.230 vs min 0.82, ChromaticDelta=128.99 vs max 18.0).",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_004 exhibits a visual appearance regression against the controlled reference render (SSIM=0.230).",
+      "expected_state": {
+        "min_structural_similarity": 0.82,
+        "max_chromatic_shift": 18.0
+      },
+      "actual_state": {
+        "structural_similarity": 0.2298,
+        "chromatic_delta": 128.995,
+        "gradient_similarity": 0.5249
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "hybrid_metadata_plus_cv",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_ref_rgb.png",
+        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_obj_mask.png",
+        "visual_metrics": {
+          "ssim": 0.2298,
+          "gradient_similarity": 0.5249,
+          "chromatic_delta": 128.995,
+          "raw_pixel_l1": 122.338,
+          "roi_masked": true
+        }
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn01"
+    },
+    {
+      "issue_id": "ISS-IF001-BA184B98B5EC",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_001",
+      "frame_time": {
+        "frame": 0,
+        "seconds": 0.0
+      },
+      "actor_guid": "guid-lantern-02",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/InvalidMount/Missing/SM_BrokenLantern",
+      "rule_id": "IF-001",
+      "issue_type": "Invalid/missing asset reference",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.99,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Asset Registry returned missing/unresolvable reference for '/InvalidMount/Missing/SM_BrokenLantern' bound to actor 'BP_CaveLantern'.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' in SH_001 references missing or unresolvable asset '/InvalidMount/Missing/SM_BrokenLantern'.",
+      "expected_state": {
+        "asset_exists_in_registry": true,
+        "valid_package_prefix": "/Game/"
+      },
+      "actual_state": {
+        "asset_exists_in_registry": false,
+        "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh01_f0000_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh01_f0000_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF002-109E25FFEE90",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_002",
+      "frame_time": {
+        "frame": 48,
+        "seconds": 2.0
+      },
+      "actor_guid": "guid-hero-02",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-002",
+      "issue_type": "Expected actor unbound in shot",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.98,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Expected actor 'BP_Protagonist_Kael' (guid-hero-02) required by rule 'rule_LS_LeaveAlive_Scn02_hero_bound' is unbound in SH_002.",
+      "one_sentence_explanation": "Required actor 'BP_Protagonist_Kael' is missing or unbound in Level Sequence shot SH_002.",
+      "expected_state": {
+        "bound_in_sequencer": true,
+        "actor_guid": "guid-hero-02"
+      },
+      "actual_state": {
+        "bound_in_sequencer": false
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh02_f0048_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh02_f0048_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF007-5A211940D789",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_005",
+      "frame_time": {
+        "frame": 192,
+        "seconds": 8.0
+      },
+      "actor_guid": "guid-relic-02",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-007",
+      "issue_type": "Unexpected asset substitution",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.95,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Actor 'BP_SignalRelic_Prop' in SH_005 uses substituted mesh/material/asset compared to declared invariant 'rule_LS_LeaveAlive_Scn02_relic_asset_inv'.",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_005 substituted 'SM_SignalRelic_ProxyLow' / '['MI_SignalRelic_Greybox']' instead of declared asset invariant.",
+      "expected_state": {
+        "mesh_id": "SM_SignalRelic_Hero",
+        "material_ids": [
+          "MI_SignalRelic_Gold"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "actual_state": {
+        "mesh_id": "SM_SignalRelic_ProxyLow",
+        "material_ids": [
+          "MI_SignalRelic_Greybox"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh05_f0192_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh05_f0192_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF003-943E9CD997ED",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_003",
+      "frame_time": {
+        "frame": 96,
+        "seconds": 4.0
+      },
+      "actor_guid": "guid-lantern-02",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+      "rule_id": "IF-003",
+      "issue_type": "Unexpected state change",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.86,
+      "confidence_band": "Medium",
+      "status": "failed",
+      "observation": "Unexpected state change between SH_002 and SH_003 for 'BP_CaveLantern': visibility toggled True -> False.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' had an undeclared state change across cut SH_002 -> SH_003 (visibility toggled True -> False).",
+      "expected_state": {
+        "visibility_state": true,
+        "mesh_id": "SM_CaveLantern",
+        "material_ids": [
+          "MI_Lantern_Glass"
+        ]
+      },
+      "actual_state": {
+        "visibility_state": false,
+        "mesh_id": "SM_CaveLantern",
+        "material_ids": [
+          "MI_Lantern_Glass"
+        ]
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF004-10314E7A9EE5",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_004",
+      "frame_time": {
+        "frame": 144,
+        "seconds": 6.0
+      },
+      "actor_guid": "guid-hero-02",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-004",
+      "issue_type": "Transform discontinuity",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.81,
+      "confidence_band": "Medium",
+      "status": "needs_review",
+      "observation": "Transform jump across continuous cut SH_003 -> SH_004: delta_pos=125.0cm (max 45.0cm), delta_rot=0.0deg (max 30.0deg).",
+      "one_sentence_explanation": "Actor 'BP_Protagonist_Kael' jumped 125.0 cm / 0.0 deg at continuous shot boundary SH_003 -> SH_004.",
+      "expected_state": {
+        "location_cm": [
+          100.0,
+          20.0,
+          0.0
+        ],
+        "rotation_deg": [
+          0.0,
+          15.0,
+          0.0
+        ],
+        "max_position_jump_cm": 45.0,
+        "max_rotation_jump_deg": 30.0
+      },
+      "actual_state": {
+        "location_cm": [
+          225.0,
+          20.0,
+          0.0
+        ],
+        "rotation_deg": [
+          0.0,
+          15.0,
+          0.0
+        ],
+        "measured_position_jump_cm": 125.0,
+        "measured_rotation_jump_deg": 0.0
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF005-73FD13E60C0F",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_003",
+      "frame_time": {
+        "frame": 96,
+        "seconds": 4.0
+      },
+      "actor_guid": "guid-relic-02",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-005",
+      "issue_type": "Expected prop not visible",
+      "rule_version": "1.0.0",
+      "model_version": "interframe-cv-comparator-1.0.0-opencv4",
+      "severity": "Major",
+      "confidence": 0.89,
+      "confidence_band": "Medium",
+      "status": "needs_review",
+      "observation": "Actor exists in Sequencer with visibility=True, but Object-ID stencil 2 has only 0 visible pixels (0.0000% < 0.15% threshold) due to full camera occlusion or frustum clipping.",
+      "one_sentence_explanation": "Expected prop/actor 'BP_SignalRelic_Prop' is active in Sequencer for SH_003 but is fully occluded or absent in the rendered camera view.",
+      "expected_state": {
+        "visibility_state": true,
+        "min_mask_coverage_ratio": 0.0015
+      },
+      "actual_state": {
+        "visibility_state": true,
+        "rendered_mask_pixels": 0,
+        "rendered_mask_coverage_ratio": 0.0
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "hybrid_metadata_plus_cv",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_ref_rgb.png",
+        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_obj_mask.png",
+        "visual_metrics": {
+          "stencil_object_id": 2,
+          "actor_pixels": 0,
+          "total_pixels": 14400,
+          "coverage_ratio": 0.0
+        }
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF006-653F8C605026",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn02",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn02",
+      "shot_id": "SH_004",
+      "frame_time": {
+        "frame": 144,
+        "seconds": 6.0
+      },
+      "actor_guid": "guid-relic-02",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-006",
+      "issue_type": "Appearance regression in same shot",
+      "rule_version": "1.0.0",
+      "model_version": "interframe-cv-comparator-1.0.0-opencv4",
+      "severity": "Minor",
+      "confidence": 0.96,
+      "confidence_band": "Candidate / Needs Review",
+      "status": "needs_review",
+      "observation": "Controlled render appearance regression detected within actor region (SSIM=0.230 vs min 0.82, ChromaticDelta=129.00 vs max 18.0).",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_004 exhibits a visual appearance regression against the controlled reference render (SSIM=0.230).",
+      "expected_state": {
+        "min_structural_similarity": 0.82,
+        "max_chromatic_shift": 18.0
+      },
+      "actual_state": {
+        "structural_similarity": 0.23,
+        "chromatic_delta": 129.001,
+        "gradient_similarity": 0.5249
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "hybrid_metadata_plus_cv",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_ref_rgb.png",
+        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_obj_mask.png",
+        "visual_metrics": {
+          "ssim": 0.23,
+          "gradient_similarity": 0.5249,
+          "chromatic_delta": 129.001,
+          "raw_pixel_l1": 122.338,
+          "roi_masked": true
+        }
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn02"
+    },
+    {
+      "issue_id": "ISS-IF001-5C528080E8B4",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_001",
+      "frame_time": {
+        "frame": 0,
+        "seconds": 0.0
+      },
+      "actor_guid": "guid-lantern-03",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/InvalidMount/Missing/SM_BrokenLantern",
+      "rule_id": "IF-001",
+      "issue_type": "Invalid/missing asset reference",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.99,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Asset Registry returned missing/unresolvable reference for '/InvalidMount/Missing/SM_BrokenLantern' bound to actor 'BP_CaveLantern'.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' in SH_001 references missing or unresolvable asset '/InvalidMount/Missing/SM_BrokenLantern'.",
+      "expected_state": {
+        "asset_exists_in_registry": true,
+        "valid_package_prefix": "/Game/"
+      },
+      "actual_state": {
+        "asset_exists_in_registry": false,
+        "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh01_f0000_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh01_f0000_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF002-61FA72DD82FD",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_002",
+      "frame_time": {
+        "frame": 48,
+        "seconds": 2.0
+      },
+      "actor_guid": "guid-hero-03",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-002",
+      "issue_type": "Expected actor unbound in shot",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.98,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Expected actor 'BP_Protagonist_Kael' (guid-hero-03) required by rule 'rule_LS_LeaveAlive_Scn03_hero_bound' is unbound in SH_002.",
+      "one_sentence_explanation": "Required actor 'BP_Protagonist_Kael' is missing or unbound in Level Sequence shot SH_002.",
+      "expected_state": {
+        "bound_in_sequencer": true,
+        "actor_guid": "guid-hero-03"
+      },
+      "actual_state": {
+        "bound_in_sequencer": false
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh02_f0048_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh02_f0048_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF007-6662A843E7B5",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_005",
+      "frame_time": {
+        "frame": 192,
+        "seconds": 8.0
+      },
+      "actor_guid": "guid-relic-03",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-007",
+      "issue_type": "Unexpected asset substitution",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.95,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Actor 'BP_SignalRelic_Prop' in SH_005 uses substituted mesh/material/asset compared to declared invariant 'rule_LS_LeaveAlive_Scn03_relic_asset_inv'.",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_005 substituted 'SM_SignalRelic_ProxyLow' / '['MI_SignalRelic_Greybox']' instead of declared asset invariant.",
+      "expected_state": {
+        "mesh_id": "SM_SignalRelic_Hero",
+        "material_ids": [
+          "MI_SignalRelic_Gold"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "actual_state": {
+        "mesh_id": "SM_SignalRelic_ProxyLow",
+        "material_ids": [
+          "MI_SignalRelic_Greybox"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh05_f0192_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh05_f0192_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF003-5A1AAA8D9CFD",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_003",
+      "frame_time": {
+        "frame": 96,
+        "seconds": 4.0
+      },
+      "actor_guid": "guid-lantern-03",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+      "rule_id": "IF-003",
+      "issue_type": "Unexpected state change",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.86,
+      "confidence_band": "Medium",
+      "status": "failed",
+      "observation": "Unexpected state change between SH_002 and SH_003 for 'BP_CaveLantern': visibility toggled True -> False.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' had an undeclared state change across cut SH_002 -> SH_003 (visibility toggled True -> False).",
+      "expected_state": {
+        "visibility_state": true,
+        "mesh_id": "SM_CaveLantern",
+        "material_ids": [
+          "MI_Lantern_Glass"
+        ]
+      },
+      "actual_state": {
+        "visibility_state": false,
+        "mesh_id": "SM_CaveLantern",
+        "material_ids": [
+          "MI_Lantern_Glass"
+        ]
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF004-A81EF1924342",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_004",
+      "frame_time": {
+        "frame": 144,
+        "seconds": 6.0
+      },
+      "actor_guid": "guid-hero-03",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-004",
+      "issue_type": "Transform discontinuity",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.81,
+      "confidence_band": "Medium",
+      "status": "needs_review",
+      "observation": "Transform jump across continuous cut SH_003 -> SH_004: delta_pos=125.0cm (max 45.0cm), delta_rot=0.0deg (max 30.0deg).",
+      "one_sentence_explanation": "Actor 'BP_Protagonist_Kael' jumped 125.0 cm / 0.0 deg at continuous shot boundary SH_003 -> SH_004.",
+      "expected_state": {
+        "location_cm": [
+          100.0,
+          20.0,
+          0.0
+        ],
+        "rotation_deg": [
+          0.0,
+          15.0,
+          0.0
+        ],
+        "max_position_jump_cm": 45.0,
+        "max_rotation_jump_deg": 30.0
+      },
+      "actual_state": {
+        "location_cm": [
+          225.0,
+          20.0,
+          0.0
+        ],
+        "rotation_deg": [
+          0.0,
+          15.0,
+          0.0
+        ],
+        "measured_position_jump_cm": 125.0,
+        "measured_rotation_jump_deg": 0.0
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF005-F7307838FD5F",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_003",
+      "frame_time": {
+        "frame": 96,
+        "seconds": 4.0
+      },
+      "actor_guid": "guid-relic-03",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-005",
+      "issue_type": "Expected prop not visible",
+      "rule_version": "1.0.0",
+      "model_version": "interframe-cv-comparator-1.0.0-opencv4",
+      "severity": "Major",
+      "confidence": 0.89,
+      "confidence_band": "Medium",
+      "status": "needs_review",
+      "observation": "Actor exists in Sequencer with visibility=True, but Object-ID stencil 2 has only 0 visible pixels (0.0000% < 0.15% threshold) due to full camera occlusion or frustum clipping.",
+      "one_sentence_explanation": "Expected prop/actor 'BP_SignalRelic_Prop' is active in Sequencer for SH_003 but is fully occluded or absent in the rendered camera view.",
+      "expected_state": {
+        "visibility_state": true,
+        "min_mask_coverage_ratio": 0.0015
+      },
+      "actual_state": {
+        "visibility_state": true,
+        "rendered_mask_pixels": 0,
+        "rendered_mask_coverage_ratio": 0.0
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "hybrid_metadata_plus_cv",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_ref_rgb.png",
+        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_obj_mask.png",
+        "visual_metrics": {
+          "stencil_object_id": 2,
+          "actor_pixels": 0,
+          "total_pixels": 14400,
+          "coverage_ratio": 0.0
+        }
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF006-75D44C7BE3FF",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn03",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn03",
+      "shot_id": "SH_004",
+      "frame_time": {
+        "frame": 144,
+        "seconds": 6.0
+      },
+      "actor_guid": "guid-relic-03",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-006",
+      "issue_type": "Appearance regression in same shot",
+      "rule_version": "1.0.0",
+      "model_version": "interframe-cv-comparator-1.0.0-opencv4",
+      "severity": "Minor",
+      "confidence": 0.96,
+      "confidence_band": "Candidate / Needs Review",
+      "status": "needs_review",
+      "observation": "Controlled render appearance regression detected within actor region (SSIM=0.230 vs min 0.82, ChromaticDelta=128.99 vs max 18.0).",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_004 exhibits a visual appearance regression against the controlled reference render (SSIM=0.230).",
+      "expected_state": {
+        "min_structural_similarity": 0.82,
+        "max_chromatic_shift": 18.0
+      },
+      "actual_state": {
+        "structural_similarity": 0.2298,
+        "chromatic_delta": 128.986,
+        "gradient_similarity": 0.5253
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "hybrid_metadata_plus_cv",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_ref_rgb.png",
+        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_obj_mask.png",
+        "visual_metrics": {
+          "ssim": 0.2298,
+          "gradient_similarity": 0.5253,
+          "chromatic_delta": 128.986,
+          "raw_pixel_l1": 122.338,
+          "roi_masked": true
+        }
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn03"
+    },
+    {
+      "issue_id": "ISS-IF001-5D29908331ED",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn04",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn04",
+      "shot_id": "SH_001",
+      "frame_time": {
+        "frame": 0,
+        "seconds": 0.0
+      },
+      "actor_guid": "guid-lantern-04",
+      "actor_label": "BP_CaveLantern",
+      "asset_path": "/InvalidMount/Missing/SM_BrokenLantern",
+      "rule_id": "IF-001",
+      "issue_type": "Invalid/missing asset reference",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.99,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Asset Registry returned missing/unresolvable reference for '/InvalidMount/Missing/SM_BrokenLantern' bound to actor 'BP_CaveLantern'.",
+      "one_sentence_explanation": "Actor 'BP_CaveLantern' in SH_001 references missing or unresolvable asset '/InvalidMount/Missing/SM_BrokenLantern'.",
+      "expected_state": {
+        "asset_exists_in_registry": true,
+        "valid_package_prefix": "/Game/"
+      },
+      "actual_state": {
+        "asset_exists_in_registry": false,
+        "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh01_f0000_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh01_f0000_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn04"
+    },
+    {
+      "issue_id": "ISS-IF002-F0FA32909CD4",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn04",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn04",
+      "shot_id": "SH_002",
+      "frame_time": {
+        "frame": 48,
+        "seconds": 2.0
+      },
+      "actor_guid": "guid-hero-04",
+      "actor_label": "BP_Protagonist_Kael",
+      "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+      "rule_id": "IF-002",
+      "issue_type": "Expected actor unbound in shot",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Critical",
+      "confidence": 0.98,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Expected actor 'BP_Protagonist_Kael' (guid-hero-04) required by rule 'rule_LS_LeaveAlive_Scn04_hero_bound' is unbound in SH_002.",
+      "one_sentence_explanation": "Required actor 'BP_Protagonist_Kael' is missing or unbound in Level Sequence shot SH_002.",
+      "expected_state": {
+        "bound_in_sequencer": true,
+        "actor_guid": "guid-hero-04"
+      },
+      "actual_state": {
+        "bound_in_sequencer": false
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh02_f0048_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh02_f0048_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn04"
+    },
+    {
+      "issue_id": "ISS-IF007-FC5A539AC65F",
+      "project_hash": "leavealive98a7b6c5",
+      "engine_version": "5.8.0",
+      "sequence_id": "LS_LeaveAlive_Scn04",
+      "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn04",
+      "shot_id": "SH_005",
+      "frame_time": {
+        "frame": 192,
+        "seconds": 8.0
+      },
+      "actor_guid": "guid-relic-04",
+      "actor_label": "BP_SignalRelic_Prop",
+      "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+      "rule_id": "IF-007",
+      "issue_type": "Unexpected asset substitution",
+      "rule_version": "1.0.0",
+      "model_version": "none (deterministic_rule)",
+      "severity": "Major",
+      "confidence": 0.95,
+      "confidence_band": "High",
+      "status": "failed",
+      "observation": "Actor 'BP_SignalRelic_Prop' in SH_005 uses substituted mesh/material/asset compared to declared invariant 'rule_LS_LeaveAlive_Scn04_relic_asset_inv'.",
+      "one_sentence_explanation": "Actor 'BP_SignalRelic_Prop' in SH_005 substituted 'SM_SignalRelic_ProxyLow' / '['MI_SignalRelic_Greybox']' instead of declared asset invariant.",
+      "expected_state": {
+        "mesh_id": "SM_SignalRelic_Hero",
+        "material_ids": [
+          "MI_SignalRelic_Gold"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "actual_state": {
+        "mesh_id": "SM_SignalRelic_ProxyLow",
+        "material_ids": [
+          "MI_SignalRelic_Greybox"
+        ],
+        "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+      },
+      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh05_f0192_curr_rgb.png",
+      "supporting_evidence": {
+        "detection_source": "deterministic_engine_rule",
+        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh05_f0192_curr_rgb.png",
+        "reference_frame_uri": "",
+        "object_id_mask_uri": "",
+        "visual_metrics": {}
+      },
+      "engine_project_revision": "git-20261022-r104",
+      "collector_version": "1.0.0",
+      "reviewer_status": "unresolved",
+      "reviewer_disposition": {
+        "decision": "unresolved",
+        "reviewer_id": "unassigned",
+        "updated_at": "2026-10-22T14:30:00+00:00",
+        "notes": ""
+      },
+      "first_seen_build": "git-20261022-r104",
+      "run_id": "eval-b3_hybrid-LS_LeaveAlive_Scn04"
+    }
+  ]
+}

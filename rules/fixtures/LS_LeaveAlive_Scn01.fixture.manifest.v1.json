@@ -1,0 +1,1102 @@
+{
+  "schema_version": "1.0.0",
+  "project_id_hash": "leavealive98a7b6c5",
+  "project_name": "LEAVE_ALIVE_Testbed",
+  "engine_version": "5.8.0",
+  "source_control_revision": "git-20261022-r104",
+  "sequence_id": "LS_LeaveAlive_Scn01",
+  "sequence_path": "/Game/LeaveAlive/Cinematics/LS_LeaveAlive_Scn01",
+  "render_profile_id": "MRQ_Controlled_Linear_sRGB_v1",
+  "collection_timestamp": "2026-10-22T14:30:00+00:00",
+  "collector_version": "1.0.0",
+  "nondeterministic_effects": {
+    "dynamic_lighting_lumen": true,
+    "niagara_particles_active": false,
+    "chaos_physics_sim": false,
+    "temporal_upscaler": "TSR_Deterministic_Seed"
+  },
+  "expected_state_rules": [
+    {
+      "rule_instance_id": "rule_LS_LeaveAlive_Scn01_hero_bound",
+      "rule_id": "IF-002",
+      "target_actor_guid": "guid-hero-01",
+      "target_actor_label": "BP_Protagonist_Kael",
+      "expected_asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael"
+    },
+    {
+      "rule_instance_id": "rule_LS_LeaveAlive_Scn01_relic_vis",
+      "rule_id": "IF-005",
+      "target_actor_guid": "guid-relic-01",
+      "target_actor_label": "BP_SignalRelic_Prop",
+      "must_be_visible_in_camera": true
+    },
+    {
+      "rule_instance_id": "rule_LS_LeaveAlive_Scn01_relic_appearance",
+      "rule_id": "IF-006",
+      "target_actor_guid": "guid-relic-01",
+      "target_actor_label": "BP_SignalRelic_Prop"
+    },
+    {
+      "rule_instance_id": "rule_LS_LeaveAlive_Scn01_relic_asset_inv",
+      "rule_id": "IF-007",
+      "target_actor_guid": "guid-relic-01",
+      "target_actor_label": "BP_SignalRelic_Prop",
+      "expected_mesh_id": "SM_SignalRelic_Hero",
+      "expected_material_ids": [
+        "MI_SignalRelic_Gold"
+      ],
+      "expected_asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
+    },
+    {
+      "rule_instance_id": "rule_LS_LeaveAlive_Scn01_declared_transition",
+      "rule_id": "IF-003",
+      "target_actor_guid": "guid-lantern-01",
+      "target_actor_label": "BP_CaveLantern",
+      "allowed_transition_shots": [
+        "SH_005"
+      ]
+    }
+  ],
+  "shot_list": [
+    {
+      "shot_id": "SH_001",
+      "start_frame": 0,
+      "end_frame": 47,
+      "frame_rate": 24.0,
+      "continuity_anchor": "continuous_action",
+      "camera_binding": {
+        "camera_guid": "cam-01-01",
+        "camera_name": "CineCam_01",
+        "focal_length_mm": 35.0,
+        "aperture_fstop": 2.8,
+        "transform": {
+          "location_cm": [
+            -225.0,
+            0.0,
+            145.0
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "actor_bindings": [
+        {
+          "actor_guid": "guid-hero-01",
+          "actor_label": "BP_Protagonist_Kael",
+          "actor_role": "lead_character",
+          "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SK_Kael_Cine",
+          "material_ids": [
+            "MI_Kael_Suit"
+          ],
+          "stencil_object_id": 1,
+          "transform_samples": [
+            {
+              "frame": 0,
+              "time_seconds": 0.0,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 47,
+              "time_seconds": 1.9583,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-relic-01",
+          "actor_label": "BP_SignalRelic_Prop",
+          "actor_role": "hero_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_SignalRelic_Hero",
+          "material_ids": [
+            "MI_SignalRelic_Gold"
+          ],
+          "stencil_object_id": 2,
+          "transform_samples": [
+            {
+              "frame": 0,
+              "time_seconds": 0.0,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 47,
+              "time_seconds": 1.9583,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-lantern-01",
+          "actor_label": "BP_CaveLantern",
+          "actor_role": "environment_prop",
+          "asset_path": "/InvalidMount/Missing/SM_BrokenLantern",
+          "asset_exists_in_registry": false,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_CaveLantern",
+          "material_ids": [
+            "MI_Lantern_Glass"
+          ],
+          "stencil_object_id": 3,
+          "transform_samples": [
+            {
+              "frame": 0,
+              "time_seconds": 0.0,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 47,
+              "time_seconds": 1.9583,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_state_rule_ids": [
+        "rule_LS_LeaveAlive_Scn01_hero_bound",
+        "rule_LS_LeaveAlive_Scn01_relic_vis",
+        "rule_LS_LeaveAlive_Scn01_relic_appearance",
+        "rule_LS_LeaveAlive_Scn01_relic_asset_inv"
+      ],
+      "evidence_capture_config": {
+        "sampled_frames": [
+          0,
+          47
+        ],
+        "rgb_frames": {},
+        "reference_rgb_frames": {},
+        "object_id_masks": {},
+        "resolution": [
+          160,
+          90
+        ]
+      }
+    },
+    {
+      "shot_id": "SH_002",
+      "start_frame": 48,
+      "end_frame": 95,
+      "frame_rate": 24.0,
+      "continuity_anchor": "continuous_action",
+      "camera_binding": {
+        "camera_guid": "cam-01-02",
+        "camera_name": "CineCam_02",
+        "focal_length_mm": 50.0,
+        "aperture_fstop": 2.8,
+        "transform": {
+          "location_cm": [
+            -210.0,
+            0.0,
+            145.0
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "actor_bindings": [
+        {
+          "actor_guid": "guid-hero-01",
+          "actor_label": "BP_Protagonist_Kael",
+          "actor_role": "lead_character",
+          "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": false,
+          "visibility_state": true,
+          "mesh_id": "SK_Kael_Cine",
+          "material_ids": [
+            "MI_Kael_Suit"
+          ],
+          "stencil_object_id": 1,
+          "transform_samples": [
+            {
+              "frame": 48,
+              "time_seconds": 2.0,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 95,
+              "time_seconds": 3.9583,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-relic-01",
+          "actor_label": "BP_SignalRelic_Prop",
+          "actor_role": "hero_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_SignalRelic_Hero",
+          "material_ids": [
+            "MI_SignalRelic_Gold"
+          ],
+          "stencil_object_id": 2,
+          "transform_samples": [
+            {
+              "frame": 48,
+              "time_seconds": 2.0,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 95,
+              "time_seconds": 3.9583,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-lantern-01",
+          "actor_label": "BP_CaveLantern",
+          "actor_role": "environment_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_CaveLantern",
+          "material_ids": [
+            "MI_Lantern_Glass"
+          ],
+          "stencil_object_id": 3,
+          "transform_samples": [
+            {
+              "frame": 48,
+              "time_seconds": 2.0,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 95,
+              "time_seconds": 3.9583,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_state_rule_ids": [
+        "rule_LS_LeaveAlive_Scn01_hero_bound",
+        "rule_LS_LeaveAlive_Scn01_relic_vis",
+        "rule_LS_LeaveAlive_Scn01_relic_appearance",
+        "rule_LS_LeaveAlive_Scn01_relic_asset_inv"
+      ],
+      "evidence_capture_config": {
+        "sampled_frames": [
+          48,
+          95
+        ],
+        "rgb_frames": {},
+        "reference_rgb_frames": {},
+        "object_id_masks": {},
+        "resolution": [
+          160,
+          90
+        ]
+      }
+    },
+    {
+      "shot_id": "SH_003",
+      "start_frame": 96,
+      "end_frame": 143,
+      "frame_rate": 24.0,
+      "continuity_anchor": "continuous_action",
+      "camera_binding": {
+        "camera_guid": "cam-01-03",
+        "camera_name": "CineCam_03",
+        "focal_length_mm": 35.0,
+        "aperture_fstop": 2.8,
+        "transform": {
+          "location_cm": [
+            -195.0,
+            0.0,
+            145.0
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "actor_bindings": [
+        {
+          "actor_guid": "guid-hero-01",
+          "actor_label": "BP_Protagonist_Kael",
+          "actor_role": "lead_character",
+          "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SK_Kael_Cine",
+          "material_ids": [
+            "MI_Kael_Suit"
+          ],
+          "stencil_object_id": 1,
+          "transform_samples": [
+            {
+              "frame": 96,
+              "time_seconds": 4.0,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 143,
+              "time_seconds": 5.9583,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-relic-01",
+          "actor_label": "BP_SignalRelic_Prop",
+          "actor_role": "hero_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_SignalRelic_Hero",
+          "material_ids": [
+            "MI_SignalRelic_Gold"
+          ],
+          "stencil_object_id": 2,
+          "transform_samples": [
+            {
+              "frame": 96,
+              "time_seconds": 4.0,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 143,
+              "time_seconds": 5.9583,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-lantern-01",
+          "actor_label": "BP_CaveLantern",
+          "actor_role": "environment_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": false,
+          "mesh_id": "SM_CaveLantern",
+          "material_ids": [
+            "MI_Lantern_Glass"
+          ],
+          "stencil_object_id": 3,
+          "transform_samples": [
+            {
+              "frame": 96,
+              "time_seconds": 4.0,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 143,
+              "time_seconds": 5.9583,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_state_rule_ids": [
+        "rule_LS_LeaveAlive_Scn01_hero_bound",
+        "rule_LS_LeaveAlive_Scn01_relic_vis",
+        "rule_LS_LeaveAlive_Scn01_relic_appearance",
+        "rule_LS_LeaveAlive_Scn01_relic_asset_inv"
+      ],
+      "evidence_capture_config": {
+        "sampled_frames": [
+          96,
+          143
+        ],
+        "rgb_frames": {},
+        "reference_rgb_frames": {},
+        "object_id_masks": {},
+        "resolution": [
+          160,
+          90
+        ]
+      }
+    },
+    {
+      "shot_id": "SH_004",
+      "start_frame": 144,
+      "end_frame": 191,
+      "frame_rate": 24.0,
+      "continuity_anchor": "continuous_action",
+      "camera_binding": {
+        "camera_guid": "cam-01-04",
+        "camera_name": "CineCam_04",
+        "focal_length_mm": 50.0,
+        "aperture_fstop": 2.8,
+        "transform": {
+          "location_cm": [
+            -180.0,
+            0.0,
+            145.0
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "actor_bindings": [
+        {
+          "actor_guid": "guid-hero-01",
+          "actor_label": "BP_Protagonist_Kael",
+          "actor_role": "lead_character",
+          "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SK_Kael_Cine",
+          "material_ids": [
+            "MI_Kael_Suit"
+          ],
+          "stencil_object_id": 1,
+          "transform_samples": [
+            {
+              "frame": 144,
+              "time_seconds": 6.0,
+              "location_cm": [
+                225.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 191,
+              "time_seconds": 7.9583,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-relic-01",
+          "actor_label": "BP_SignalRelic_Prop",
+          "actor_role": "hero_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_SignalRelic_Hero",
+          "material_ids": [
+            "MI_SignalRelic_Gold"
+          ],
+          "stencil_object_id": 2,
+          "transform_samples": [
+            {
+              "frame": 144,
+              "time_seconds": 6.0,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 191,
+              "time_seconds": 7.9583,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-lantern-01",
+          "actor_label": "BP_CaveLantern",
+          "actor_role": "environment_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": false,
+          "mesh_id": "SM_CaveLantern",
+          "material_ids": [
+            "MI_Lantern_Glass"
+          ],
+          "stencil_object_id": 3,
+          "transform_samples": [
+            {
+              "frame": 144,
+              "time_seconds": 6.0,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 191,
+              "time_seconds": 7.9583,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_state_rule_ids": [
+        "rule_LS_LeaveAlive_Scn01_hero_bound",
+        "rule_LS_LeaveAlive_Scn01_relic_vis",
+        "rule_LS_LeaveAlive_Scn01_relic_appearance",
+        "rule_LS_LeaveAlive_Scn01_relic_asset_inv"
+      ],
+      "evidence_capture_config": {
+        "sampled_frames": [
+          144,
+          191
+        ],
+        "rgb_frames": {},
+        "reference_rgb_frames": {},
+        "object_id_masks": {},
+        "resolution": [
+          160,
+          90
+        ]
+      }
+    },
+    {
+      "shot_id": "SH_005",
+      "start_frame": 192,
+      "end_frame": 239,
+      "frame_rate": 24.0,
+      "continuity_anchor": "continuous_action",
+      "camera_binding": {
+        "camera_guid": "cam-01-05",
+        "camera_name": "CineCam_05",
+        "focal_length_mm": 35.0,
+        "aperture_fstop": 2.8,
+        "transform": {
+          "location_cm": [
+            -165.0,
+            0.0,
+            145.0
+          ],
+          "rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "actor_bindings": [
+        {
+          "actor_guid": "guid-hero-01",
+          "actor_label": "BP_Protagonist_Kael",
+          "actor_role": "lead_character",
+          "asset_path": "/Game/LeaveAlive/Characters/Kael/BP_Protagonist_Kael",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SK_Kael_Cine",
+          "material_ids": [
+            "MI_Kael_Suit"
+          ],
+          "stencil_object_id": 1,
+          "transform_samples": [
+            {
+              "frame": 192,
+              "time_seconds": 8.0,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 239,
+              "time_seconds": 9.9583,
+              "location_cm": [
+                100.0,
+                20.0,
+                0.0
+              ],
+              "rotation_deg": [
+                0.0,
+                15.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-relic-01",
+          "actor_label": "BP_SignalRelic_Prop",
+          "actor_role": "hero_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": true,
+          "mesh_id": "SM_SignalRelic_ProxyLow",
+          "material_ids": [
+            "MI_SignalRelic_Greybox"
+          ],
+          "stencil_object_id": 2,
+          "transform_samples": [
+            {
+              "frame": 192,
+              "time_seconds": 8.0,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 239,
+              "time_seconds": 9.9583,
+              "location_cm": [
+                140.0,
+                -10.0,
+                85.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "actor_guid": "guid-lantern-01",
+          "actor_label": "BP_CaveLantern",
+          "actor_role": "environment_prop",
+          "asset_path": "/Game/LeaveAlive/Props/SM_CaveLantern",
+          "asset_exists_in_registry": true,
+          "bound_in_sequencer": true,
+          "visibility_state": false,
+          "mesh_id": "SM_CaveLantern",
+          "material_ids": [
+            "MI_Lantern_Glass"
+          ],
+          "stencil_object_id": 3,
+          "transform_samples": [
+            {
+              "frame": 192,
+              "time_seconds": 8.0,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "frame": 239,
+              "time_seconds": 9.9583,
+              "location_cm": [
+                80.0,
+                -45.0,
+                120.0
+              ],
+              "rotation_deg": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_state_rule_ids": [
+        "rule_LS_LeaveAlive_Scn01_hero_bound",
+        "rule_LS_LeaveAlive_Scn01_relic_vis",
+        "rule_LS_LeaveAlive_Scn01_relic_appearance",
+        "rule_LS_LeaveAlive_Scn01_relic_asset_inv"
+      ],
+      "evidence_capture_config": {
+        "sampled_frames": [
+          192,
+          239
+        ],
+        "rgb_frames": {},
+        "reference_rgb_frames": {},
+        "object_id_masks": {},
+        "resolution": [
+          160,
+          90
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://interframe.dev/schemas/manifest.v1.json",
+  "title": "InterframeShotManifestV1",
+  "description": "Versioned input contract for Unreal Engine Level Sequence continuity inspection (Blueprint Section 9).",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id_hash",
+    "engine_version",
+    "source_control_revision",
+    "sequence_id",
+    "sequence_path",
+    "shot_list",
+    "render_profile_id",
+    "collection_timestamp",
+    "collector_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0.0"
+      ]
+    },
+    "project_id_hash": {
+      "type": "string",
+      "minLength": 8
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "engine_version": {
+      "type": "string",
+      "pattern": "^5\\.[0-9]+\\.[0-9]+"
+    },
+    "source_control_revision": {
+      "type": "string",
+      "minLength": 4
+    },
+    "sequence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence_path": {
+      "type": "string",
+      "pattern": "^/Game/"
+    },
+    "render_profile_id": {
+      "type": "string"
+    },
+    "collection_timestamp": {
+      "type": "string"
+    },
+    "collector_version": {
+      "type": "string"
+    },
+    "nondeterministic_effects": {
+      "type": "object",
+      "properties": {
+        "dynamic_lighting_lumen": {
+          "type": "boolean"
+        },
+        "niagara_particles_active": {
+          "type": "boolean"
+        },
+        "chaos_physics_sim": {
+          "type": "boolean"
+        },
+        "temporal_upscaler": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "expected_state_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_instance_id",
+          "rule_id"
+        ],
+        "properties": {
+          "rule_instance_id": {
+            "type": "string"
+          },
+          "rule_id": {
+            "type": "string",
+            "enum": [
+              "IF-001",
+              "IF-002",
+              "IF-003",
+              "IF-004",
+              "IF-005",
+              "IF-006",
+              "IF-007",
+              "IF-008"
+            ]
+          },
+          "target_actor_guid": {
+            "type": "string"
+          },
+          "target_actor_label": {
+            "type": "string"
+          },
+          "expected_asset_path": {
+            "type": "string"
+          },
+          "expected_mesh_id": {
+            "type": "string"
+          },
+          "expected_material_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected_visible": {
+            "type": "boolean"
+          },
+          "must_be_visible_in_camera": {
+            "type": "boolean"
+          },
+          "allowed_transition_shots": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_position_jump_cm": {
+            "type": "number"
+          },
+          "max_rotation_jump_deg": {
+            "type": "number"
+          },
+          "contradictory_flag": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "shot_list": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "shot_id",
+          "start_frame",
+          "end_frame",
+          "camera_binding",
+          "actor_bindings",
+          "expected_state_rule_ids",
+          "evidence_capture_config"
+        ],
+        "properties": {
+          "shot_id": {
+            "type": "string"
+          },
+          "start_frame": {
+            "type": "integer"
+          },
+          "end_frame": {
+            "type": "integer"
+          },
+          "frame_rate": {
+            "type": "number",
+            "default": 24.0
+          },
+          "continuity_anchor": {
+            "type": "string",
+            "enum": [
+              "continuous_action",
+              "hard_cut",
+              "time_skip",
+              "location_change"
+            ],
+            "default": "continuous_action"
+          },
+          "camera_binding": {
+            "type": "object",
+            "required": [
+              "camera_guid",
+              "camera_name",
+              "focal_length_mm"
+            ],
+            "properties": {
+              "camera_guid": {
+                "type": "string"
+              },
+              "camera_name": {
+                "type": "string"
+              },
+              "focal_length_mm": {
+                "type": "number"
+              },
+              "aperture_fstop": {
+                "type": "number"
+              },
+              "transform": {
+                "type": "object",
+                "required": [
+                  "location_cm",
+                  "rotation_deg"
+                ],
+                "properties": {
+                  "location_cm": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "rotation_deg": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  }
+                }
+              }
+            }
+          },
+          "actor_bindings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "actor_guid",
+                "actor_label",
+                "asset_path",
+                "asset_exists_in_registry",
+                "bound_in_sequencer",
+                "visibility_state",
+                "mesh_id",
+                "material_ids",
+                "transform_samples"
+              ],
+              "properties": {
+                "actor_guid": {
+                  "type": "string"
+                },
+                "actor_label": {
+                  "type": "string"
+                },
+                "actor_role": {
+                  "type": "string"
+                },
+                "asset_path": {
+                  "type": "string"
+                },
+                "asset_exists_in_registry": {
+                  "type": "boolean"
+                },
+                "bound_in_sequencer": {
+                  "type": "boolean"
+                },
+                "visibility_state": {
+                  "type": "boolean"
+                },
+                "mesh_id": {
+                  "type": "string"
+                },
+                "material_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "stencil_object_id": {
+                  "type": "integer"
+                },
+                "transform_samples": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "frame",
+                      "time_seconds",
+                      "location_cm",
+                      "rotation_deg",
+                      "scale"
+                    ],
+                    "properties": {
+                      "frame": {
+                        "type": "integer"
+                      },
+                      "time_seconds": {
+                        "type": "number"
+                      },
+                      "location_cm": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 3,
+                        "maxItems": 3
+                      },
+                      "rotation_deg": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 3,
+                        "maxItems": 3
+                      },
+                      "scale": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 3,
+                        "maxItems": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "expected_state_rule_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_capture_config": {
+            "type": "object",
+            "required": [
+              "sampled_frames"
+            ],
+            "properties": {
+              "sampled_frames": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "rgb_frames": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "reference_rgb_frames": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "object_id_masks": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "resolution": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

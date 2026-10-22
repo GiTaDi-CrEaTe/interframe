@@ -1,0 +1,102 @@
+{
+  "rule_pack_id": "interframe.core.continuity.v1",
+  "rule_pack_version": "1.0.0",
+  "description": "Appendix A MVP Issue Taxonomy for Unreal Engine Level Sequence Continuity QA",
+  "rules": [
+    {
+      "rule_id": "IF-001",
+      "defect_type": "Invalid/missing asset reference",
+      "detection_signal": "Asset Registry or validator returns missing reference.",
+      "confidence_policy": "High when engine API confirms; deterministic.",
+      "default_severity": "Critical",
+      "default_confidence": 0.99,
+      "requires_cv": false,
+      "thresholds": {}
+    },
+    {
+      "rule_id": "IF-002",
+      "defect_type": "Expected actor unbound in shot",
+      "detection_signal": "Expected rule references an actor not bound in Level Sequence.",
+      "confidence_policy": "High only if the rule is explicit.",
+      "default_severity": "Critical",
+      "default_confidence": 0.98,
+      "requires_cv": false,
+      "thresholds": {}
+    },
+    {
+      "rule_id": "IF-003",
+      "defect_type": "Unexpected state change",
+      "detection_signal": "Mesh/material/visibility/transform differs at sampled boundaries outside allowed transition.",
+      "confidence_policy": "Medium until user defines permitted changes.",
+      "default_severity": "Major",
+      "default_confidence": 0.86,
+      "requires_cv": false,
+      "thresholds": {
+        "allow_declared_transitions": true
+      }
+    },
+    {
+      "rule_id": "IF-004",
+      "defect_type": "Transform discontinuity",
+      "detection_signal": "Position/rotation jump exceeds configurable threshold at a cut or continuity anchor.",
+      "confidence_policy": "Candidate only; camera/animation intent may explain it.",
+      "default_severity": "Major",
+      "default_confidence": 0.78,
+      "requires_cv": false,
+      "thresholds": {
+        "max_position_jump_cm": 45.0,
+        "max_rotation_jump_deg": 30.0,
+        "apply_on_anchors": [
+          "continuous_action"
+        ]
+      }
+    },
+    {
+      "rule_id": "IF-005",
+      "defect_type": "Expected prop not visible",
+      "detection_signal": "Actor exists but rendered mask/visibility evidence shows it is absent or fully occluded.",
+      "confidence_policy": "Needs camera visibility + occlusion reasoning; usually reviewer-confirmed.",
+      "default_severity": "Major",
+      "default_confidence": 0.84,
+      "requires_cv": true,
+      "thresholds": {
+        "min_mask_pixel_ratio": 0.0015,
+        "min_Visible_pixel_count": 35
+      }
+    },
+    {
+      "rule_id": "IF-006",
+      "defect_type": "Appearance regression in same shot",
+      "detection_signal": "Aligned reference/current renders differ under controlled profile.",
+      "confidence_policy": "Only compare like-for-like builds/settings; difference is not automatically defect.",
+      "default_severity": "Minor",
+      "default_confidence": 0.76,
+      "requires_cv": true,
+      "thresholds": {
+        "min_structural_similarity": 0.82,
+        "max_chromatic_shift": 18.0,
+        "ignore_global_exposure_shift_below": 12.0
+      }
+    },
+    {
+      "rule_id": "IF-007",
+      "defect_type": "Unexpected asset substitution",
+      "detection_signal": "Asset/mesh/material ID differs from declared expected asset.",
+      "confidence_policy": "High if asset identity is explicit; lower if inferred visually.",
+      "default_severity": "Major",
+      "default_confidence": 0.95,
+      "requires_cv": false,
+      "thresholds": {}
+    },
+    {
+      "rule_id": "IF-008",
+      "defect_type": "Rule/data-quality problem",
+      "detection_signal": "Missing expected-state rule or contradictory rule definitions.",
+      "confidence_policy": "Report configuration issue instead of hallucinating a scene defect.",
+      "default_severity": "Informational",
+      "default_confidence": 1.0,
+      "requires_cv": false,
+      "thresholds": {}
+    }
+  ]
+}

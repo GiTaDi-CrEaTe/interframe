@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interframe-continuity-qa"
+version = "1.0.0"
+description = "Engine-aware hybrid continuity and scene-integrity QA for Unreal Engine Level Sequences"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Interframe Engineering / Yarvix Studio Exploration"}
+]
+dependencies = [
+    "numpy>=1.24.0",
+    "opencv-python>=4.8.0",
+    "jsonschema>=4.18.0",
+]
+
+[project.scripts]
+interframe = "interframe_engine.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["python"]
