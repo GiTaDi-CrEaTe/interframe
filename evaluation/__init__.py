@@ -1,1 +1,1 @@
-"""Interframe Scientific Research & Evaluation Protocol (Blueprint Section 6)."""
+"""Evaluation and benchmark protocol for Interframe continuity QA."""

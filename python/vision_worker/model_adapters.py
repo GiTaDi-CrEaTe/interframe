@@ -1,9 +1,9 @@
-"""Governance and pluggable adapters for optional vision foundation models.
+"""License tracking and adapters for optional vision foundation models.
 
-Implements Blueprint Section 5, Section 6 & Section 10 ("Model and dataset licenses"):
+License and model integrity rules:
 - Pin exact model, code, and checkpoint hashes before running any neural component.
-- Separate code license (e.g. Apache-2.0 for SAM 2 / DINOv2) from dataset terms (e.g. CC BY 4.0 for SA-V).
-- Reject or disable any model component that does not improve the primary hybrid metric enough to justify cost.
+- Track code license (e.g. Apache-2.0 for SAM 2 / DINOv2) separately from dataset terms (e.g. CC BY 4.0 for SA-V).
+- Disable any model component that does not improve the primary metric enough to justify cost.
 """
 
 from __future__ import annotations

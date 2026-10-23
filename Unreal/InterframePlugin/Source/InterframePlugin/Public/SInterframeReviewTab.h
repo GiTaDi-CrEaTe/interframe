@@ -5,7 +5,7 @@
 #include "InterframeTypes.h"
 
 /**
- * Dockable Unreal Editor Slate tab for selecting Level Sequences, running hybrid
+ * Dockable Unreal Editor Slate tab for selecting Level Sequences, running
  * continuity diagnostics, viewing shot-level evidence, and recording artist decisions.
  */
 class SInterframeReviewTab : public SCompoundWidget

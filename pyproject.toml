@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "interframe-continuity-qa"
 version = "1.0.0"
-description = "Engine-aware hybrid continuity and scene-integrity QA for Unreal Engine Level Sequences"
+description = "Engine-aware continuity and scene-integrity QA for Unreal Engine Level Sequences"
 readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.11"

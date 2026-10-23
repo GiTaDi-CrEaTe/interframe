@@ -1,6 +1,6 @@
-"""Movie Render Queue (MRQ) deterministic sampling and pass orchestrator.
+"""Movie Render Queue (MRQ) sampling and pass orchestrator.
 
-Implements Blueprint Section 5 & Section 12 controls:
+Orchestration rules:
 - Run deterministic rules first; only request renders for shots requiring visual verification.
 - Sample boundary and anchor frames deterministically (`[start_frame, mid_frame, end_frame]`).
 - Cache rendered frames by `(project_id_hash, source_control_revision, sequence_id, shot_id, render_profile_id)`.

@@ -1,10 +1,10 @@
-"""Synthetic LEAVE_ALIVE Continuity Benchmark Generator (Blueprint Section 6, Page 8).
+"""Synthetic LEAVE_ALIVE continuity benchmark generator.
 
-Generates a legally clean, deterministic benchmark dataset with:
+Generates a deterministic benchmark dataset with:
 - 25 Level Sequences containing 5 shots each (125 shots, 100 shot boundaries).
-- Controlled rendered RGB frames, reference RGB frames, and Object-ID segmentation masks (160x90 PNGs)
+- Rendered RGB frames, reference RGB frames, and Object-ID segmentation masks (160x90 PNGs)
   including simulated Lumen lighting noise, Temporal AA jitter, camera cuts, and intentional state changes.
-- 105 seeded continuity faults spanning Appendix A defect types (IF-001 through IF-008) with exact ground truth.
+- 105 seeded continuity faults across defect types IF-001 through IF-008 with exact ground truth.
 """
 
 from __future__ import annotations

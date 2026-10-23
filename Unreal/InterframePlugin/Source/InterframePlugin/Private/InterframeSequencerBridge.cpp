@@ -113,7 +113,7 @@ bool FInterframeSequencerBridge::RunContinuityCheckOnSequence(
     const FString PythonScriptPath = FPaths::ProjectPluginsDir() /
         TEXT("InterframePlugin/../../python/interframe_engine/cli.py");
     const FString Args = FString::Printf(
-        TEXT(""%s" analyze --manifest "%s" --out "%s""),
+        TEXT("\"%s\" analyze --manifest \"%s\" --out \"%s\""),
         *PythonScriptPath, *ManifestPath, *OutReportPath);
 
     int32 ReturnCode = 0;
@@ -128,5 +128,38 @@ bool FInterframeSequencerBridge::RecordReviewerDisposition(
     EInterframeReviewerDecision InDecision,
     const FString& InReviewerNotes)
 {
-    return !InIssueId.IsEmpty();
+    if (InIssueId.IsEmpty())
+    {
+        return false;
+    }
+
+    FString DecisionStr;
+    switch (InDecision)
+    {
+    case EInterframeReviewerDecision::TruePositive:
+        DecisionStr = TEXT("true_positive");
+        break;
+    case EInterframeReviewerDecision::FalsePositive:
+        DecisionStr = TEXT("false_positive");
+        break;
+    case EInterframeReviewerDecision::IntentionalChange:
+        DecisionStr = TEXT("intentional_change");
+        break;
+    default:
+        DecisionStr = TEXT("unresolved");
+        break;
+    }
+
+    const FString DbPath = FPaths::ProjectSavedDir() / TEXT("Interframe/interframe_local.sqlite");
+    const FString PythonScriptPath = FPaths::ProjectPluginsDir() /
+        TEXT("InterframePlugin/../../python/interframe_engine/cli.py");
+    const FString Args = FString::Printf(
+        TEXT("\"%s\" review --db \"%s\" --issue-id \"%s\" --decision \"%s\" --notes \"%s\""),
+        *PythonScriptPath, *DbPath, *InIssueId, *DecisionStr, *InReviewerNotes);
+
+    int32 ReturnCode = 0;
+    FString StdOut;
+    FString StdErr;
+    FPlatformProcess::ExecProcess(TEXT("python3"), *Args, &ReturnCode, &StdOut, &StdErr);
+    return (ReturnCode == 0);
 }

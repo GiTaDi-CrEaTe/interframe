@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://interframe.dev/schemas/manifest.v1.json",
   "title": "InterframeShotManifestV1",
-  "description": "Versioned input contract for Unreal Engine Level Sequence continuity inspection (Blueprint Section 9).",
+  "description": "Manifest schema for Unreal Engine Level Sequence continuity checks.",
   "type": "object",
   "required": [
     "schema_version",

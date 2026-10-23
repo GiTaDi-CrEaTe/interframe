@@ -1,16 +1,16 @@
-# Interframe — Engine-Aware Hybrid Continuity QA for Unreal Engine
+# Interframe — Engine-Aware Continuity QA for Unreal Engine
 
 [![Unreal Engine](https://img.shields.io/badge/Unreal_Engine-5.8-0E1128?logo=unrealengine)](https://www.unrealengine.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Schemas](https://img.shields.io/badge/Contracts-manifest.v1_%7C_issue.v1-success)](schemas/)
 
-**Interframe** is a local-first, engine-aware continuity and scene-integrity diagnostic system for **Unreal Engine 5.8 Level Sequences** (`UMovieScene` / Sequencer + Movie Render Queue).
+**Interframe** is a local-first continuity and scene-integrity diagnostic tool for **Unreal Engine 5.8 Level Sequences** (`UMovieScene` / Sequencer + Movie Render Queue).
 
-Instead of treating game cinematics as flat video files or relying on brittle pixel diffs that fail on Temporal Anti-Aliasing (TAA), Lumen global illumination noise, and intentional narrative cuts, Interframe implements a **hybrid verification architecture**:
-1. **Engine Truth First**: Queries Unreal's Asset Registry, `ULevelSequence` camera cuts, `FMovieSceneBinding` tracks, actor transforms, visibility states, and declared scene invariants to catch structural defects deterministically (`IF-001`..`IF-004`, `IF-007`, `IF-008`).
-2. **Targeted Controlled Render Verification**: Orchestrates Movie Render Queue (MRQ) frame & Object-ID stencil passes only where visual verification is required—catching camera-space prop occlusion (`IF-005`) and intra-mask shader/appearance regressions (`IF-006`) while normalizing exposure and ignoring sub-pixel rendering noise.
-3. **Human-in-the-Loop Artist Governance**: Every finding links to an exact `(sequence_path, shot_id, frame_time, actor_guid, asset_path, rule_id)` pointer with structured evidence, allowing technical artists to mark findings as `true_positive`, `false_positive`, or `intentional_change` in a local SQLite/JSONL store without uploading proprietary game assets to the cloud.
+Pixel-diff QA tools treat cinematics as flat video, which breaks on Temporal Anti-Aliasing (TAA), Lumen global illumination noise, and intentional narrative cuts. Interframe takes a different approach — it reads engine data first, then only runs visual checks where they actually matter:
+1. **Engine Data First**: Reads Unreal's Asset Registry, `ULevelSequence` camera cuts, `FMovieSceneBinding` tracks, actor transforms, visibility states, and declared scene invariants to flag structural defects deterministically (`IF-001`..`IF-004`, `IF-007`, `IF-008`).
+2. **Selective Render Checks**: Runs Movie Render Queue (MRQ) frame & Object-ID stencil passes only where visual checks are needed — catching camera-space prop occlusion (`IF-005`) and appearance regressions within actor masks (`IF-006`) while accounting for exposure drift and sub-pixel rendering noise.
+3. **Artist Review & Sign-off**: Every finding links to an exact `(sequence_path, shot_id, frame_time, actor_guid, asset_path, rule_id)` pointer with attached evidence, so technical artists can mark findings as `true_positive`, `false_positive`, or `intentional_change` in a local SQLite/JSONL store — no proprietary game assets leave the workstation.
 
 ## Repository Layout
 
@@ -30,11 +30,11 @@ interframe/
 ├── tests/
 │   ├── unit/                        # Schema, rule engine, CV comparator, MRQ cache & SQLite versioning unit tests
 │   └── integration/                 # End-to-end B1/B2/B3 baseline benchmark & CLI integration tests
-├── docs/                            # Architecture deep-dive, privacy/threat model, and MIT Maker Portfolio guide
+├── docs/                            # Architecture deep-dive, privacy/threat model, and studio deployment guide
 └── scripts/                         # Local CLI runner and CI verification scripts
 ```
 
-## MVP Issue Taxonomy (Appendix A)
+## Issue Taxonomy
 
 | Rule ID | Defect Type | Detection Signal | Default Severity | Method |
 | :--- | :--- | :--- | :--- | :--- |
@@ -47,9 +47,9 @@ interframe/
 | **IF-007** | Unexpected asset substitution | Bound mesh/material ID differs from declared expected asset invariant | Major | Deterministic Engine Rule |
 | **IF-008** | Rule/data-quality problem | Contradictory or incomplete expected-state rule configuration | Informational | Deterministic Config Audit |
 
-## Scientific Evaluation Benchmark (`LEAVE_ALIVE` Controlled Testbed)
+## Benchmark Evaluation (`LEAVE_ALIVE` Testbed)
 
-We evaluate three baselines on a reproducible 25-sequence benchmark (**125 shots**, **100 shot boundaries**, **105 seeded faults** across `IF-001`..`IF-008`, with simulated Lumen GI grain, exposure shifts, camera cuts, and declared intentional narrative state changes):
+Three baselines are tested on a 25-sequence benchmark (**125 shots**, **100 shot boundaries**, **105 seeded faults** across `IF-001`..`IF-008`, with simulated Lumen GI grain, exposure shifts, camera cuts, and declared intentional narrative state changes):
 
 | Baseline | Precision (95% CI) | Recall (95% CI) | F1 Score (95% CI) | False Positives / 100 Cuts | Runtime (25 Seqs) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -57,9 +57,9 @@ We evaluate three baselines on a reproducible 25-sequence benchmark (**125 shots
 | **B2 — Image-Only Diff** | 0.2308 (0.1803, 0.2857) | 0.2857 (0.2683, 0.303) | 0.2553 (0.2136, 0.2888) | 100.00 | 5.852s |
 | **B3 — Hybrid Interframe** | **1.0000** (1.0, 1.0) | **1.0000** (1.0, 1.0) | **1.0000** (1.0, 1.0) | **0.00** | 6.109s |
 
-- **Hypothesis H1 Verified**: Combining Unreal Engine metadata with Object-ID masked render checks eliminates the 100.0 FP/100-cuts camera-cut & exposure false-positive trap of image-only diffs (`B2`) while lifting recall from `0.7143` (`B1`) to `1.0000` (`B3`) by catching camera-space prop occlusions (`IF-005`) and shader regressions (`IF-006`).
-- **Hypothesis H2 Verified**: In the 25-sequence crossover review simulation, median sequence review time drops from **15.00 min** (manual) to **6.20 min** (Interframe-assisted), a **58.67% reduction** (exceeding the >=25% gate).
-- **Double-Labelled Inter-Rater Agreement**: Adjudicated 40-item subset achieves Cohen's $\kappa = 0.9636$ (97.5% observed agreement).
+- **Detection Accuracy**: Combining Unreal Engine metadata with Object-ID masked render checks gets rid of the 100.0 FP/100-cuts camera-cut & exposure false-positive problem seen in image-only diffs (`B2`) while bringing recall from `0.7143` (`B1`) up to `1.0000` (`B3`) by catching camera-space prop occlusions (`IF-005`) and shader regressions (`IF-006`).
+- **Review Efficiency**: In the 25-sequence crossover review simulation, median sequence review time drops from **15.00 min** (manual) to **6.20 min** (Interframe-assisted), a **58.67% reduction**.
+- **Inter-Rater Agreement**: Adjudicated 40-item subset hits Cohen's $\kappa = 0.9636$ (97.5% observed agreement).
 
 ## Quickstart
 

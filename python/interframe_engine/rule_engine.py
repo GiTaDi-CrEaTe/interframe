@@ -1,6 +1,6 @@
-"""Deterministic Continuity Rule Engine (Appendix A Taxonomy IF-001..IF-004, IF-007, IF-008).
+"""Deterministic continuity rule engine for rules IF-001..IF-004, IF-007, IF-008.
 
-Implements Blueprint Section 5 & Appendix A:
+Rule coverage:
 - IF-001: Invalid/missing asset reference (Asset Registry check, High confidence, Critical)
 - IF-002: Expected actor unbound in shot (Explicit expected rule references unbound actor, High confidence, Critical)
 - IF-003: Unexpected state change across shot boundary (Mesh/material/visibility changes outside declared transitions)

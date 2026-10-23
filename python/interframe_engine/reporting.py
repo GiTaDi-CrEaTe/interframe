@@ -10,7 +10,7 @@ from typing import Any, Dict, List
 
 
 class InterframeReportExporter:
-    """Exports structured continuity findings into studio-ready JSON, CSV, and HTML artifacts."""
+    """Exports structured continuity findings to JSON, CSV, and HTML reports."""
 
     @staticmethod
     def export_json(issues: List[Dict[str, Any]], out_path: str | Path, metadata: Dict[str, Any] | None = None) -> Path:

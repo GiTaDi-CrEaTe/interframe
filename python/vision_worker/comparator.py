@@ -1,9 +1,9 @@
-"""Controlled render comparison, Object-ID mask visibility, and anti-diff-trap filters.
+"""Render comparison, Object-ID mask visibility, and noise-filtering checks.
 
-Implements Blueprint Section 5, Section 6 & Section 9 ("Avoid visual-diff traps"):
-- Naive pixel differences light up on anti-aliasing, Lumen noise, exposure shifts, or TAA jitter.
+Handles visual continuity checks:
+- Raw pixel diffs fire false positives on anti-aliasing, Lumen noise, exposure shifts, or TAA jitter.
 - ControlledRenderComparator normalizes global exposure, computes structural similarity (SSIM)
-  and gradient-structure cosine similarity, and restricts appearance regression checks to the
+  and gradient-structure cosine similarity, and limits appearance regression checks to the
   actor's semantic / Object-ID mask where available.
 """
 
@@ -32,7 +32,7 @@ class VisualEvidenceResult:
 
 
 class ControlledRenderComparator:
-    """Evaluates rendered shot frames and Object-ID masks for continuity defects."""
+    """Checks rendered shot frames and Object-ID masks for continuity defects."""
 
     MODEL_VERSION = "interframe-cv-comparator-1.0.0-opencv4"
 
@@ -276,7 +276,7 @@ class ControlledRenderComparator:
     ) -> VisualEvidenceResult:
         """Baseline B2 comparator: Image-only diff without engine metadata or semantic masks.
 
-        Used in the scientific evaluation protocol (Blueprint Section 6) to quantify false positives
+        Used in the evaluation protocol to quantify false positives
         caused by camera cuts, Lumen lighting grain, TAA jitter, and intentional state changes.
         """
         img_a = self.load_image(frame_a_path)

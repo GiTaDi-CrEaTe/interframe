@@ -1,7 +1,7 @@
 {
   "rule_pack_id": "interframe.core.continuity.v1",
   "rule_pack_version": "1.0.0",
-  "description": "Appendix A MVP Issue Taxonomy for Unreal Engine Level Sequence Continuity QA",
+  "description": "Default continuity rules for Unreal Engine Level Sequence QA",
   "rules": [
     {
       "rule_id": "IF-001",
@@ -61,7 +61,7 @@
       "requires_cv": true,
       "thresholds": {
         "min_mask_pixel_ratio": 0.0015,
-        "min_Visible_pixel_count": 35
+        "min_visible_pixel_count": 35
       }
     },
     {

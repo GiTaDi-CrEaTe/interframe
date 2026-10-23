@@ -120,17 +120,17 @@
         ],
         "recall_95ci": [
           0.697,
-          0.7317
+          0.7333
         ],
         "f1_95ci": [
           0.8214,
-          0.8451
+          0.8462
         ]
       },
       "runtime": {
-        "total_seconds": 3.5104,
-        "seconds_per_sequence": 0.1404,
-        "peak_ram_mb": 0.244
+        "total_seconds": 1.8779,
+        "seconds_per_sequence": 0.0751,
+        "peak_ram_mb": 0.221
       }
     },
     "B2_IMAGE_ONLY": {
@@ -235,18 +235,18 @@
           0.2857
         ],
         "recall_95ci": [
-          0.2683,
+          0.2667,
           0.303
         ],
         "f1_95ci": [
-          0.2136,
-          0.2888
+          0.2126,
+          0.2889
         ]
       },
       "runtime": {
-        "total_seconds": 6.5028,
-        "seconds_per_sequence": 0.2601,
-        "peak_ram_mb": 1.977
+        "total_seconds": 2.9362,
+        "seconds_per_sequence": 0.1174,
+        "peak_ram_mb": 1.948
       }
     },
     "B3_HYBRID": {
@@ -360,9 +360,9 @@
         ]
       },
       "runtime": {
-        "total_seconds": 6.3161,
-        "seconds_per_sequence": 0.2526,
-        "peak_ram_mb": 2.057
+        "total_seconds": 8.0178,
+        "seconds_per_sequence": 0.3207,
+        "peak_ram_mb": 2.021
       }
     }
   },
@@ -425,10 +425,10 @@
         "asset_exists_in_registry": false,
         "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh01_f0000_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh01_f0000_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh01_f0000_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh01_f0000_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -476,10 +476,10 @@
       "actual_state": {
         "bound_in_sequencer": false
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh02_f0048_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh02_f0048_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh02_f0048_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh02_f0048_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -534,10 +534,10 @@
         ],
         "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh05_f0192_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh05_f0192_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh05_f0192_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh05_f0192_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -592,10 +592,10 @@
           "MI_Lantern_Glass"
         ]
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -664,10 +664,10 @@
         "measured_position_jump_cm": 125.0,
         "measured_rotation_jump_deg": 0.0
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -717,12 +717,12 @@
         "rendered_mask_pixels": 0,
         "rendered_mask_coverage_ratio": 0.0
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "hybrid_metadata_plus_cv",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
-        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_ref_rgb.png",
-        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh03_f0096_obj_mask.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh03_f0096_ref_rgb.png",
+        "object_id_mask_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh03_f0096_obj_mask.png",
         "visual_metrics": {
           "stencil_object_id": 2,
           "actor_pixels": 0,
@@ -775,12 +775,12 @@
         "chromatic_delta": 128.995,
         "gradient_similarity": 0.5249
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "hybrid_metadata_plus_cv",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
-        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_ref_rgb.png",
-        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq01_sh04_f0144_obj_mask.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh04_f0144_ref_rgb.png",
+        "object_id_mask_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq01_sh04_f0144_obj_mask.png",
         "visual_metrics": {
           "ssim": 0.2298,
           "gradient_similarity": 0.5249,
@@ -833,10 +833,10 @@
         "asset_exists_in_registry": false,
         "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh01_f0000_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh01_f0000_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh01_f0000_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh01_f0000_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -884,10 +884,10 @@
       "actual_state": {
         "bound_in_sequencer": false
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh02_f0048_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh02_f0048_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh02_f0048_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh02_f0048_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -942,10 +942,10 @@
         ],
         "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh05_f0192_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh05_f0192_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh05_f0192_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh05_f0192_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1000,10 +1000,10 @@
           "MI_Lantern_Glass"
         ]
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1072,10 +1072,10 @@
         "measured_position_jump_cm": 125.0,
         "measured_rotation_jump_deg": 0.0
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1125,12 +1125,12 @@
         "rendered_mask_pixels": 0,
         "rendered_mask_coverage_ratio": 0.0
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "hybrid_metadata_plus_cv",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
-        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_ref_rgb.png",
-        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh03_f0096_obj_mask.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh03_f0096_ref_rgb.png",
+        "object_id_mask_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh03_f0096_obj_mask.png",
         "visual_metrics": {
           "stencil_object_id": 2,
           "actor_pixels": 0,
@@ -1183,12 +1183,12 @@
         "chromatic_delta": 129.001,
         "gradient_similarity": 0.5249
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "hybrid_metadata_plus_cv",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
-        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_ref_rgb.png",
-        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq02_sh04_f0144_obj_mask.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh04_f0144_ref_rgb.png",
+        "object_id_mask_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq02_sh04_f0144_obj_mask.png",
         "visual_metrics": {
           "ssim": 0.23,
           "gradient_similarity": 0.5249,
@@ -1241,10 +1241,10 @@
         "asset_exists_in_registry": false,
         "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh01_f0000_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh01_f0000_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh01_f0000_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh01_f0000_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1292,10 +1292,10 @@
       "actual_state": {
         "bound_in_sequencer": false
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh02_f0048_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh02_f0048_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh02_f0048_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh02_f0048_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1350,10 +1350,10 @@
         ],
         "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh05_f0192_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh05_f0192_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh05_f0192_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh05_f0192_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1408,10 +1408,10 @@
           "MI_Lantern_Glass"
         ]
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1480,10 +1480,10 @@
         "measured_position_jump_cm": 125.0,
         "measured_rotation_jump_deg": 0.0
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1533,12 +1533,12 @@
         "rendered_mask_pixels": 0,
         "rendered_mask_coverage_ratio": 0.0
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "hybrid_metadata_plus_cv",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
-        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_ref_rgb.png",
-        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh03_f0096_obj_mask.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh03_f0096_curr_rgb.png",
+        "reference_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh03_f0096_ref_rgb.png",
+        "object_id_mask_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh03_f0096_obj_mask.png",
         "visual_metrics": {
           "stencil_object_id": 2,
           "actor_pixels": 0,
@@ -1591,12 +1591,12 @@
         "chromatic_delta": 128.986,
         "gradient_similarity": 0.5253
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "hybrid_metadata_plus_cv",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
-        "reference_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_ref_rgb.png",
-        "object_id_mask_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq03_sh04_f0144_obj_mask.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh04_f0144_curr_rgb.png",
+        "reference_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh04_f0144_ref_rgb.png",
+        "object_id_mask_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq03_sh04_f0144_obj_mask.png",
         "visual_metrics": {
           "ssim": 0.2298,
           "gradient_similarity": 0.5253,
@@ -1649,10 +1649,10 @@
         "asset_exists_in_registry": false,
         "asset_path": "/InvalidMount/Missing/SM_BrokenLantern"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh01_f0000_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq04_sh01_f0000_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh01_f0000_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq04_sh01_f0000_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1700,10 +1700,10 @@
       "actual_state": {
         "bound_in_sequencer": false
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh02_f0048_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq04_sh02_f0048_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh02_f0048_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq04_sh02_f0048_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}
@@ -1758,10 +1758,10 @@
         ],
         "asset_path": "/Game/LeaveAlive/Props/SM_SignalRelic_Hero"
       },
-      "evidence_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh05_f0192_curr_rgb.png",
+      "evidence_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq04_sh05_f0192_curr_rgb.png",
       "supporting_evidence": {
         "detection_source": "deterministic_engine_rule",
-        "rgb_frame_uri": "/tmp/tmpjjpdpf_r/dataset/renders/seq04_sh05_f0192_curr_rgb.png",
+        "rgb_frame_uri": "/home/killer/Desktop/INTERFRAME/interframe/evaluation/artifacts/dataset/renders/seq04_sh05_f0192_curr_rgb.png",
         "reference_frame_uri": "",
         "object_id_mask_uri": "",
         "visual_metrics": {}

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Scientific Evaluation Runner for Interframe Baselines B1, B2, and B3 (Blueprint Section 6).
+"""Evaluation runner for Interframe baselines B1, B2, and B3.
 
-Tests the three falsifiable hypotheses and publishes all metrics required by Blueprint Pages 8–9:
+Measures continuity defect detection across three modes:
 - Precision, Recall, and F1 (overall and per defect type IF-001..IF-008)
 - False positives per 100 shot boundaries
 - Miss rate by severity (Critical, Major, Minor, Informational)
 - Sequence-clustered bootstrap 95% confidence intervals (500 resamples clustered by sequence)
 - Inter-rater agreement (Cohen's kappa on double-labelled subset)
-- Simulated crossover time-to-review study (H2 hypothesis verification)
+- Simulated crossover time-to-review study
 - Runtime and memory profile
 """
 
@@ -19,7 +19,7 @@ import sys
 import time
 import tracemalloc
 from pathlib import Path
-from typing import Any, Dict, List, Set, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 import numpy as np
 
@@ -133,10 +133,10 @@ def sequence_clustered_bootstrap_ci(
     seq_ids: List[str],
     gt_by_seq: Dict[str, List[Dict[str, Any]]],
     pred_by_seq: Dict[str, List[Dict[str, Any]]],
-    n_resamples: int = 400,
+    n_resamples: int = 500,
     seed: int = 42,
 ) -> Dict[str, Tuple[float, float]]:
-    """Computes 95% bootstrap confidence intervals clustered by sequence (Blueprint Page 9)."""
+    """Computes 95% bootstrap confidence intervals clustered by sequence."""
     rng = np.random.default_rng(seed)
     precisions = []
     recalls = []
@@ -168,7 +168,7 @@ def sequence_clustered_bootstrap_ci(
 
 
 def compute_cohens_kappa_double_label() -> Dict[str, Any]:
-    """Computes Cohen's kappa on the double-labelled 40-item adjudication subset (Blueprint Page 8-9)."""
+    """Computes Cohen's kappa on the double-labelled 40-item adjudication subset."""
     # 40 double-labelled items across 4 categories: true_defect (0), intentional_change (1), benign_render_noise (2), config_error (3)
     rater_a = [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

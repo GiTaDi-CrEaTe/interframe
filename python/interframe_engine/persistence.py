@@ -1,10 +1,10 @@
 """Local-first SQLite and JSONL persistence with build versioning & reviewer feedback.
 
-Implements Blueprint Section 5 & Section 9:
-- MVP persistence uses local SQLite + append-only JSONL with content hashes.
-- Never silently overwrite historical findings; version them by `run_id` / `first_seen_build`.
-- Persist artist/QA reviewer dispositions (`true_positive`, `false_positive`, `intentional_change`, `unresolved`)
-  and export dismissed false positives into the regression suite.
+Storage behaviors:
+- Uses local SQLite + append-only JSONL with content hashes.
+- Never silently overwrites historical findings; versions them by `run_id` / `first_seen_build`.
+- Persists artist/QA reviewer dispositions (`true_positive`, `false_positive`, `intentional_change`, `unresolved`)
+  and exports reviewer decisions for auditability.
 """
 
 from __future__ import annotations
@@ -13,8 +13,9 @@ import datetime
 import hashlib
 import json
 import sqlite3
+from contextlib import contextmanager
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Iterator, List, Optional
 
 
 class InterframeStore:
@@ -32,8 +33,18 @@ class InterframeStore:
         )
         self._init_db()
 
+    @contextmanager
+    def _connect(self) -> Iterator[sqlite3.Connection]:
+        """Provides a managed SQLite connection that closes properly upon exit."""
+        conn = sqlite3.connect(self.db_path)
+        try:
+            with conn:
+                yield conn
+        finally:
+            conn.close()
+
     def _init_db(self) -> None:
-        with sqlite3.connect(self.db_path) as conn:
+        with self._connect() as conn:
             conn.execute(
                 """
                 CREATE TABLE IF NOT EXISTS diagnostic_runs (
@@ -91,7 +102,7 @@ class InterframeStore:
         manifest_sha256 = hashlib.sha256(manifest_bytes).hexdigest()
         now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
-        with sqlite3.connect(self.db_path) as conn:
+        with self._connect() as conn:
             conn.execute(
                 """
                 INSERT OR REPLACE INTO diagnostic_runs
@@ -182,7 +193,7 @@ class InterframeStore:
             raise ValueError(f"Invalid decision '{decision}'. Must be one of {sorted(self.VALID_DISPOSITIONS)}")
 
         now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
-        with sqlite3.connect(self.db_path) as conn:
+        with self._connect() as conn:
             conn.execute(
                 """
                 INSERT OR REPLACE INTO reviewer_dispositions
@@ -223,7 +234,7 @@ class InterframeStore:
         return record
 
     def get_issues_for_run(self, run_id: str) -> List[Dict[str, Any]]:
-        with sqlite3.connect(self.db_path) as conn:
+        with self._connect() as conn:
             rows = conn.execute(
                 "SELECT issue_json FROM findings_history WHERE run_id = ? ORDER BY record_pk ASC",
                 (run_id,),
@@ -232,7 +243,7 @@ class InterframeStore:
 
     def get_issue_history(self, issue_id: str) -> List[Dict[str, Any]]:
         """Returns all historical versions of an issue across builds/runs."""
-        with sqlite3.connect(self.db_path) as conn:
+        with self._connect() as conn:
             rows = conn.execute(
                 "SELECT run_id, first_seen_build, reviewer_status, issue_json FROM findings_history WHERE issue_id = ? ORDER BY record_pk ASC",
                 (issue_id,),

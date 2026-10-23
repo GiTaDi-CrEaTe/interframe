@@ -3,7 +3,7 @@
   "Version": 1,
   "VersionName": "1.0.0",
   "FriendlyName": "Interframe Continuity QA",
-  "Description": "Engine-aware hybrid continuity and scene-integrity diagnostics for Unreal Engine Level Sequences.",
+  "Description": "Engine-aware continuity and scene-integrity diagnostics for Unreal Engine Level Sequences.",
   "Category": "Cinematics",
   "CreatedBy": "Interframe Research & Engineering (Yarvix Studio Exploration)",
   "CreatedByURL": "https://github.com/interframe-qa/interframe",

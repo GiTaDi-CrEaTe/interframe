@@ -1,10 +1,10 @@
-"""End-to-end Hybrid Continuity Diagnostic Pipeline (Blueprint Section 5 & Section 6).
+"""End-to-end continuity diagnostic pipeline.
 
-Supports three execution modes corresponding to the scientific evaluation baselines:
+Supports three execution modes matching the scientific evaluation baselines:
 - `B1_RULES_ONLY`: Deterministic Unreal metadata & invariant rules only (`IF-001`..`IF-004`, `IF-007`, `IF-008`).
 - `B2_IMAGE_ONLY`: Unmasked frame-to-frame / reference image diff without engine metadata or masks.
-- `B3_HYBRID`: Full Interframe hybrid architecture combining deterministic engine truth with
-  Object-ID segmentation visibility verification (`IF-005`) and controlled masked appearance
+- `B3_HYBRID`: Full Interframe pipeline combining deterministic engine data with
+  Object-ID segmentation visibility checks (`IF-005`) and controlled masked appearance
   regression checks (`IF-006`).
 """
 
@@ -23,7 +23,7 @@ ExecutionMode = Literal["B1_RULES_ONLY", "B2_IMAGE_ONLY", "B3_HYBRID"]
 
 
 class InterframeHybridPipeline:
-    """Combines Unreal Engine metadata rules with controlled rendered visual evidence."""
+    """Combines Unreal Engine metadata rules with controlled rendered visual checks."""
 
     def __init__(
         self,
@@ -53,7 +53,7 @@ class InterframeHybridPipeline:
         mode: str = "B3_HYBRID",
         run_id: str = "run-20261022-001",
     ) -> List[Dict[str, Any]]:
-        """Executes the continuity inspection pipeline in the requested baseline mode."""
+        """Runs the continuity check pipeline in the requested baseline mode."""
         self.validate_manifest(manifest)
 
         if mode == "B1_RULES_ONLY":

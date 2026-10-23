@@ -6,7 +6,7 @@
 
 /**
  * Integrates Interframe deterministic continuity checks (IF-001..IF-004, IF-007, IF-008)
- * directly into Unreal Engine's Data Validation subsystem (Blueprint Section 4 & Section 5).
+ * directly into Unreal Engine's Data Validation subsystem.
  */
 UCLASS()
 class INTERFRAMEPLUGIN_API UInterframeEditorValidator : public UEditorValidatorBase

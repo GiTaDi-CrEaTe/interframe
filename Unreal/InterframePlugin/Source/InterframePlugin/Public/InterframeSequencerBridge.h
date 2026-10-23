@@ -7,7 +7,7 @@ class ULevelSequence;
 
 /**
  * Bridges Unreal Engine Sequencer, Asset Registry, and Movie Render Queue
- * to the local Interframe hybrid continuity diagnostic pipeline.
+ * to the local Interframe continuity diagnostic pipeline.
  */
 class INTERFRAMEPLUGIN_API FInterframeSequencerBridge
 {

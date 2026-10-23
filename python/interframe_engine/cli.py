@@ -21,7 +21,7 @@ from interframe_engine.reporting import InterframeReportExporter
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="interframe",
-        description="Interframe: Engine-aware hybrid continuity QA for Unreal Engine Level Sequences.",
+        description="Interframe: Engine-aware continuity QA for Unreal Engine Level Sequences.",
     )
     sub = parser.add_subparsers(dest="command", required=True)
 

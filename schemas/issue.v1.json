@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://interframe.dev/schemas/issue.v1.json",
   "title": "InterframeIssueContractV1",
-  "description": "Stable finding contract for Interframe Continuity QA (Blueprint Section 5 & Section 9).",
+  "description": "Issue and finding contract for Interframe continuity QA.",
   "type": "object",
   "required": [
     "issue_id",
