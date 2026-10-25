@@ -23,6 +23,9 @@ def main(argv: list[str] | None = None) -> int:
         prog="interframe",
         description="Interframe: Engine-aware continuity QA for Unreal Engine Level Sequences.",
     )
+    parser.add_argument(
+        "-v", "--version", action="version", version="%(prog)s 1.0.0"
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     analyze_p = sub.add_parser("analyze", help="Run continuity diagnostics on a shot manifest JSON.")
