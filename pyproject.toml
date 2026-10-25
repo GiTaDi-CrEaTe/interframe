@@ -10,7 +10,18 @@ readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.11"
 authors = [
+    {name = "Adityajyoti Kar", email = "kar323834@gmail.com"},
     {name = "Interframe Engineering / Yarvix Studio Exploration"}
+]
+keywords = ["unreal-engine", "cinematics", "sequencer", "continuity-qa", "computer-vision"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics :: 3D Rendering",
 ]
 dependencies = [
     "numpy>=1.24.0",
@@ -18,8 +29,24 @@ dependencies = [
     "jsonschema>=4.18.0",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/GiTaDi-CrEaTe/interframe"
+Repository = "https://github.com/GiTaDi-CrEaTe/interframe.git"
+Documentation = "https://github.com/GiTaDi-CrEaTe/interframe/tree/main/docs"
+Issues = "https://github.com/GiTaDi-CrEaTe/interframe/issues"
+
 [project.scripts]
 interframe = "interframe_engine.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["python"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
