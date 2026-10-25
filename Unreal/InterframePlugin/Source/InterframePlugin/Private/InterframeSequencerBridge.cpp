@@ -120,6 +120,10 @@ bool FInterframeSequencerBridge::RunContinuityCheckOnSequence(
     FString StdOut;
     FString StdErr;
     FPlatformProcess::ExecProcess(TEXT("python3"), *Args, &ReturnCode, &StdOut, &StdErr);
+    if (ReturnCode != 0)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[Interframe] Analyze process returned code %d: %s"), ReturnCode, *StdErr);
+    }
     return (ReturnCode == 0);
 }
 
@@ -161,5 +165,9 @@ bool FInterframeSequencerBridge::RecordReviewerDisposition(
     FString StdOut;
     FString StdErr;
     FPlatformProcess::ExecProcess(TEXT("python3"), *Args, &ReturnCode, &StdOut, &StdErr);
+    if (ReturnCode != 0)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[Interframe] Analyze process returned code %d: %s"), ReturnCode, *StdErr);
+    }
     return (ReturnCode == 0);
 }
