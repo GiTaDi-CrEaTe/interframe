@@ -1,5 +1,6 @@
 # Interframe — Engine-Aware Continuity QA for Unreal Engine
 
+[![CI](https://github.com/GiTaDi-CrEaTe/interframe/actions/workflows/ci.yml/badge.svg)](https://github.com/GiTaDi-CrEaTe/interframe/actions)
 [![Unreal Engine](https://img.shields.io/badge/Unreal_Engine-5.8-0E1128?logo=unrealengine)](https://www.unrealengine.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
@@ -63,6 +64,21 @@ Three baselines are tested on a 25-sequence benchmark (**125 shots**, **100 shot
 
 ## Quickstart
 
+### Prerequisites
+- **Python 3.11+**
+- **Unreal Engine 5.8** (optional, for Editor plugin compilation)
+
+### Installation
+Clone the repository and set up a local Python virtual environment:
+```bash
+git clone https://github.com/GiTaDi-CrEaTe/interframe.git
+cd interframe
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -e ".[dev]"
+```
+
 ### 1. Run Unit & Integration Tests
 ```bash
 python3 -m unittest discover -s tests -t . -p "test_*.py" -v
@@ -94,6 +110,10 @@ python3 python/interframe_engine/cli.py review \
   --notes "Broken CaveLantern asset path fixed in CL 10492"
 ```
 
+## Contributors
+
+- **Adityajyoti Kar** ([@GiTaDi-CrEaTe](https://github.com/GiTaDi-CrEaTe)) — Creator & Lead Developer
+
 ## License & Notice
 
-Released under the Apache License 2.0. Independent research and engineering project; not affiliated with or endorsed by Epic Games, InterPositive, or Netflix.
+Released under the Apache License 2.0. Copyright 2026 Adityajyoti Kar. Independent research and engineering project; not affiliated with or endorsed by Epic Games, InterPositive, or Netflix.
