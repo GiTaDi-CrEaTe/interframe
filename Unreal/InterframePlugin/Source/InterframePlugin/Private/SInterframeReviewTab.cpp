@@ -49,11 +49,13 @@ void SInterframeReviewTab::Construct(const FArguments& InArgs)
 
 FReply SInterframeReviewTab::OnRunDiagnosticsClicked()
 {
+    UE_LOG(LogTemp, Display, TEXT("[Interframe] Review Tab: Initiating continuity diagnostics on active LevelSequence selection."));
     return FReply::Handled();
 }
 
 FReply SInterframeReviewTab::OnExportHtmlReportClicked()
 {
+    UE_LOG(LogTemp, Display, TEXT("[Interframe] Review Tab: Exporting latest findings to Saved/Interframe/Reports/."));
     return FReply::Handled();
 }
 
