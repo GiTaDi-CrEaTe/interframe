@@ -9,19 +9,24 @@ on:
 jobs:
   verify-engine-and-benchmark:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
 
-      - name: Install dependencies
+      - name: Install dependencies and package
         run: |
           python -m pip install --upgrade pip
-          pip install numpy opencv-python-headless jsonschema
+          pip install -e ".[dev]" || pip install -e . || pip install numpy opencv-python-headless jsonschema
 
       - name: Run Unit and Integration Test Suite
         run: |
