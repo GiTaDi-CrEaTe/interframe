@@ -73,7 +73,7 @@ class TestInterframeIntegrationSuite(unittest.TestCase):
                 "--run-id",
                 "cli-int-001",
             ]
-            proc = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            proc = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=60)
             self.assertIn("Analyzed", proc.stdout)
             self.assertTrue(out_json.exists())
             self.assertTrue(out_csv.exists())
@@ -98,7 +98,7 @@ class TestInterframeIntegrationSuite(unittest.TestCase):
                 "--notes",
                 "Confirmed in Sequencer cut track",
             ]
-            rev_proc = subprocess.run(rev_cmd, capture_output=True, text=True, check=True)
+            rev_proc = subprocess.run(rev_cmd, capture_output=True, text=True, check=True, timeout=60)
             self.assertIn("true_positive", rev_proc.stdout)
 
 
