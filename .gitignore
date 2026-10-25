@@ -11,3 +11,17 @@ venv/
 *.sqlite
 *.audit.jsonl
 .DS_Store
+
+# Unreal Engine Build & Intermediate Artifacts
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+*.sln
+*.vcxproj*
+
+# Test & Coverage Artifacts
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
